@@ -35,7 +35,8 @@ if diff_free_combined > 0:
         ratio_free_combined = free_chlorine / combined_chlorine
         st.text(f'RESULT: Ratio of free to combined: {ratio_free_combined:1.1f}.  Ideally 10.')
     else:
-        st.text(f'RESULT: Ratio of free to combined: INFINITE.  Ideally 10.')
+        st.text(f'RESULT: Ratio of free to combined: INFINITE.')
+        st.text(f'NOTE: Ideally 10.')
 else:
     st.text('RESULT: NOT Sanitizing')
 
@@ -66,7 +67,8 @@ if test_type == 'Reagent':
     alk_to_add_cups = alk_to_add * 2
     st.text(f'RESULT: Baking Soda to Add: {alk_to_add:1.1f} pounds')
     st.text(f'RESULT: Baking Soda to Add: {alk_to_add_cups:1.1f} cups') 
-    st.text(f'NOTE: Do NOT apply more than 4 pounds at a single time.  Wait and retest first.')
+    st.text(f'NOTE: Do NOT apply more than 4 pounds at a single time.')
+    st.text(f'Wait and retest first.')
 else:
     alk = st.slider('Alkalinity (ppm)', min_value=0, max_value=240, value=100, step=20)
     alk_drops_calculated = alk / 10
@@ -77,6 +79,7 @@ else:
     else:
         st.text(f'RESULT: Baking Soda to Add: {alk_to_add:1.1f} pounds')
         st.text(f'RESULT: Baking Soda to Add: {alk_to_add_cups:1.1f} cups')
-        st.text(f'NOTE: Do NOT apply more than 4 pounds at a single time.  Wait and retest first.')
+        st.text(f'NOTE: Do NOT apply more than 4 pounds at a single time.')
+        st.text(f'Wait and retest first.')
 
 
